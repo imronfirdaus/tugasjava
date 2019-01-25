@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laporan" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="41"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbsiswa.`Idsiswa` AS tbsiswa_Idsiswa,
+     tbsiswa.`Namasiswa` AS tbsiswa_Namasiswa,
+     tbsiswa.`NIS` AS tbsiswa_NIS,
+     tbsiswa.`JabatanKepengurusan` AS tbsiswa_JabatanKepengurusan,
+     tbsiswa.`Nohandpone` AS tbsiswa_Nohandpone,
+     tbsiswa.`Alamat` AS tbsiswa_Alamat
+FROM
+     `tbsiswa` tbsiswa]]>
+	</queryString>
+	<field name="tbsiswa_Idsiswa" class="java.lang.String"/>
+	<field name="tbsiswa_Namasiswa" class="java.lang.String"/>
+	<field name="tbsiswa_NIS" class="java.lang.String"/>
+	<field name="tbsiswa_JabatanKepengurusan" class="java.lang.String"/>
+	<field name="tbsiswa_Nohandpone" class="java.lang.String"/>
+	<field name="tbsiswa_Alamat" class="java.lang.String"/>
+	<group name="tbsiswa_Idsiswa">
+		<groupExpression><![CDATA[$F{tbsiswa_Idsiswa}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="1" width="289" height="24" forecolor="#FF0066" backcolor="#FF6666"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA SISWA SMAN 1 TANGGERANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="189" y="25" width="38" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[priode]]></text>
+			</staticText>
+			<textField pattern="MMMMM-yy">
+				<reportElement x="227" y="25" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<rectangle>
+				<reportElement x="13" y="0" width="530" height="20" backcolor="#9900FF"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="13" y="2" width="28" height="20"/>
+				<textElement/>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="2" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="2" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Jabatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="307" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Handpone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="13" y="6" width="28" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_Idsiswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="46" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_Namasiswa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="148" y="6" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_NIS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="6" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_JabatanKepengurusan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="307" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_Nohandpone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbsiswa_Alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="29" width="530" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="373" y="13" width="62" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="443" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="62" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[imron.s.kom.mm]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
